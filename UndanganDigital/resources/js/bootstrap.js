@@ -1,4 +1,8 @@
-import 'bootstrap';
+import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap;
+
+import jQuery from 'jquery';
+window.$ = window.jQuery = jQuery;
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -32,3 +36,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+
+import DataTable from 'datatables.net-bs5';
+window.DataTable = DataTable;
+
+import select2 from 'select2';
+select2();
