@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UndanganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('/undangan')->group(function () {
+    Route::get('/', [UndanganController::class, 'index'])->name('undangan.index');
+    Route::get('/data', [UndanganController::class, 'dataUndangan'])->name('undangan.data');
 });
